@@ -2,11 +2,13 @@ require 'validator'
 
 class Table
 
+  attr_accessor :length, :width
+
   include Validator
 
   def initialize(length, width)
-    check_integer(length)
-    check_integer(width)
+    check_positive_integer(length)
+    check_positive_integer(width)
     @length = length
     @width = width
   end

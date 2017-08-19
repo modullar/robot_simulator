@@ -15,12 +15,12 @@ class Position
   end
 
   def x=(x)
-    check_integer(x)
+    check_positive_integer(x)
     @x = x
   end
 
   def y=(y)
-    check_integer(y)
+    check_positive_integer(y)
     @y = y
   end
 
@@ -32,8 +32,8 @@ class Position
   private
 
   def check_input(x,y,face)
-    check_integer(x)
-    check_integer(y)
+    check_positive_integer(x)
+    check_positive_integer(y)
     check_face(face)
   end
 
