@@ -57,6 +57,16 @@ describe Position do
       end
     end
 
+    describe '.shift' do
+      it 'should shift the position according to the direction' do
+        position.face = 'west'
+        expect(position.face).to eq 'WEST'
+        position.shift
+        expect(position.x).to eq x - 1
+        expect(position.y).to eq y
+      end
+    end
+
   end
 
 

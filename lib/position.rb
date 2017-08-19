@@ -15,12 +15,12 @@ class Position
   end
 
   def x=(x)
-    check_positive_integer(x)
+    check_integer(x)
     @x = x
   end
 
   def y=(y)
-    check_positive_integer(y)
+    check_integer(y)
     @y = y
   end
 
@@ -29,11 +29,19 @@ class Position
     @face = face.upcase
   end
 
+  def shift
+    return @y = @y + 1 if face == 'NORTH'
+    return @y = @y - 1 if face == 'SOUTH'
+    return @x = @x + 1 if face == 'EAST'
+    @x = @x - 1
+  end
+
+
   private
 
   def check_input(x,y,face)
-    check_positive_integer(x)
-    check_positive_integer(y)
+    check_integer(x)
+    check_integer(y)
     check_face(face)
   end
 
