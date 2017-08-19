@@ -67,6 +67,37 @@ describe Position do
       end
     end
 
+    describe 'turning position' do
+
+      describe '.turn_right' do
+        before do
+          position.face = 'WEST'
+        end
+        it 'should turn to the north' do
+          expect(position.face).to eq 'WEST'
+          position.turn_right
+          expect(position.face).to eq 'NORTH'
+        end
+
+      end
+
+
+      describe '.turn_left' do
+        before do
+          position.face = 'EAST'
+        end
+        it 'should turn to the north' do
+          expect(position.face).to eq 'EAST'
+          position.turn_left
+          expect(position.face).to eq 'NORTH'
+        end
+      end
+
+
+    end
+
+
+
   end
 
 

@@ -36,6 +36,20 @@ class Position
     @x = @x - 1
   end
 
+  def turn_left
+    return @face = 'WEST' if @face == 'NORTH'
+    return @face = 'SOUTH' if @face == 'WEST'
+    return @face = 'EAST' if @face == 'SOUTH'
+    @face = 'NORTH'
+  end
+
+  def turn_right
+    return @face = 'EAST' if @face == 'NORTH'
+    return @face = 'SOUTH' if @face == 'EAST'
+    return @face = 'WEST' if @face == 'SOUTH'
+    @face = 'NORTH'
+  end
+
 
   private
 
