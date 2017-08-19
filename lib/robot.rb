@@ -1,34 +1,42 @@
-class Robot
+require 'forwardable'
+require 'irb'
+require 'irbtools/binding'
 
-  attr_accessor :current_position, :table
+class Robot
+  extend Forwardable
+
+  attr_accessor :position, :table
+
+  def_delegator :@position, :turn_right, :turn_left
 
   def initialize(table)
     @table = table
-    @current_position = nil
+    @position = nil
+  end
+
+  def place(position)
+    @position = position if @table.in_boundaries?(position)
   end
 
   def move
-  end
-
-  def place(x,y,z)
-  end
-
-
-  def left
-  end
-
-  def right
+    return unless placed?
+    new_position = Position.new(@position.x, @position.y, @position.face)
+    new_position.shift
+    @position = new_position if table.in_boundaries?(new_position)
   end
 
   def report
     if !placed?
-      'not in place'
+      'not placed yet'
     else
-      [@current_position.x, @current_position.y, @current_position.direction].join(',')
+      [@position.x, @position.y, @position.face].join(',')
     end
   end
 
   def placed?
-    !@current_position.nil?
+    !@position.nil?
   end
+
+  private
+
 end
