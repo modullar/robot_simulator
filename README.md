@@ -14,3 +14,5 @@ to run the test
 to run the program
 
 ``` ruby main.rb```
+
+Solution is inspired from [this one](https://github.com/RafaelChefe/toy_robot) of surprisingly many solutions
