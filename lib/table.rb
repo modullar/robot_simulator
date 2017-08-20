@@ -1,4 +1,4 @@
-require 'validator'
+require_relative 'validator'
 
 class Table
 

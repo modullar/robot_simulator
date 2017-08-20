@@ -1,13 +1,13 @@
 require 'forwardable'
 require 'irb'
-require 'irbtools/binding'
 
 class Robot
   extend Forwardable
 
   attr_accessor :position, :table
 
-  def_delegator :@position, :turn_right, :turn_left
+  def_delegator :@position, :turn_right
+  def_delegator :@position, :turn_left
 
   def initialize(table)
     @table = table

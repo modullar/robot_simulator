@@ -7,8 +7,8 @@ require 'faker'
 
 describe Robot do
 
-  let(:length){Faker::Number.between(1, 10)}
-  let(:width){Faker::Number.between(1, 10)}
+  let(:length){Faker::Number.between(5, 10)}
+  let(:width){Faker::Number.between(5, 10)}
 
   let(:table){Table.new(length, width)}
   let(:robot){Robot.new(table)}
