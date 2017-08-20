@@ -6,7 +6,6 @@ class RobotController
     @robot = robot
   end
 
-  # parses user input and issues the appropriate commands to the robot
   def execute(command)
     if command =~ /^PLACE\s+\d+\s*,\s*\d+\s*,\s*(NORTH|SOUTH|EAST|WEST)$/
       command, x, y, direction = command.gsub(',', ' ').split
