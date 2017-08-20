@@ -1,7 +1,7 @@
 # robot_simulator
 simple robot simulator
 
-#SETUP & RUN
+# SETUP & RUN
 
 - clone it
 
